@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">	
+	<bean id="creditCard" class="com.sai.CreditcardPayment"/>
+	<bean id="debitCard" class="com.sai.DebitcardPayment"/>
+	<bean id="amexCard" class="com.sai.AmexcardPayment"/>
+	<bean id="upiPayment" class="com.sai.UpiPayment"/>
+	<bean id="billCollector" class="com.sai.BillCollector">
+	<property name="payment" ref="amexCard"/>
+	<constructor-arg name="payment" ref="creditCard"/>
+	</bean>
+	</beans>
